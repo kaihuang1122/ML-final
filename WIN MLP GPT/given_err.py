@@ -35,7 +35,7 @@ X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size=0.2, 
 
 # 建立MLP模型
 model = Sequential()
-model.add(Dense(units=64, activation='relu', input_dim=X_train.shape[1]))
+model.add(Dense(units=128, activation='relu', input_dim=X_train.shape[1]))
 model.add(Dense(units=1, activation='linear'))
 
 # 編譯模型

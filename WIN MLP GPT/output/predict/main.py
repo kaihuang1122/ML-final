@@ -1,7 +1,7 @@
 import csv
-with open("G:/ML/ML-final/WIN MLP GPT/output/predict/submission.csv") as fh:
+with open("output/predict/submission.csv") as fh:
     table = list(csv.reader(fh))
-fout = open("G:/ML/ML-final/WIN MLP GPT/output/predict/submit.csv", "w")
+fout = open("output/predict/submit.csv", "w")
 writter = csv.writer(fout)
 writter.writerow(table[0])
 

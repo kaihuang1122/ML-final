@@ -13,7 +13,7 @@ def exe(x, y, z, w, vary):
 
 thrs = []
 for x in tqdm(open("G:/ML/ML-final/html.2023.final.data/sno_test_set.txt").readlines()):
-    thrs.append(threading.Thread(target=exe(x, "1002-1027", "1021-1025[predict]", "200", "predict")))
+    thrs.append(threading.Thread(target=exe(x, "1002-1029", "1021-1025[predict]", "500", "predict")))
     thrs[-1].start()
 
 for i in thrs:
