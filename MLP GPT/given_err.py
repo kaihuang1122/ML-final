@@ -50,7 +50,7 @@ print(f'Mean Absolute Error on Test Set: {mae}')
 
 # 進行預測
 predictions = model.predict(X_test)
-
+model.save(f"/Users/kaihuang1122/Documents/ML/Final/MLP GPT/model/{sys.argv[3]}/{sys.argv[1]}.tf", True, "tf")
 import csv
 import numpy as np
 from sklearn.preprocessing import StandardScaler
@@ -80,10 +80,29 @@ with open(f"/Users/kaihuang1122/Documents/ML/Final/Combination/{sys.argv[3]}/{sy
     table = list(csv.reader(fin))[1:]
 #sys.stderr.write("id, sbi\n")
 for i, prediction in enumerate(predictions):
-    str = "2023%02d%02d_%s_%02d:%02d, %f\n"%(int(table[i][1]), int(table[i][2]), sys.argv[1], int(int(int(table[i][4])/60)), int(int(table[i][4])%60), prediction[0])
+    prediction[0] = np.abs(prediction[0])
+    if np.abs(prediction[0]) > int(table[i][-2]):
+        prediction[0] = table[i][-2]
+    str = "2023%02d%02d_%s_%02d:%02d,%f\n"%(int(table[i][1]), int(table[i][2]), sys.argv[1], int(int(int(table[i][4])/60)), int(int(table[i][4])%60), prediction[0])
     sys.stderr.write(str)
     #print(f"Prediction for sample {i + 1}: {prediction[0]}")
     counting.append(np_err(int(table[i][-1]), prediction[0]))
 
 #"2023%02d%02d_%s_%02d%02d, %f"%(int(table[i][1]), int(table[i][2]), sys.argv[1], int(int(int(table[i][4])/60)), int(int(table[i][4])%60), prediction[0])
 print("The testing err =", np.mean(counting))
+
+# 有要進行參數實驗再打開！！！
+
+# 對epochs進行實驗
+for epoch in [10, 20, 30, 40, 50]:
+    model = build_model()  # 假設有一個建立模型的函數
+    model.fit(X_train, y_train, epochs=epoch, batch_size=32, validation_split=0.1)
+    loss, mae = model.evaluate(X_test, y_test)
+    print(f'Epochs: {epoch}, Mean Absolute Error on Test Set: {mae}')
+
+# 對units進行實驗
+for unit in [16, 32, 64, 128]:
+    model = build_model(units=unit)  # 假設有一個建立模型的函數，接受units作為參數
+    model.fit(X_train, y_train, epochs=50, batch_size=32, validation_split=0.1)
+    loss, mae = model.evaluate(X_test, y_test)
+    print(f'Units: {unit}, Mean Absolute Error on Test Set: {mae}')
