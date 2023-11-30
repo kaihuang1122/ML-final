@@ -21,3 +21,4 @@ for i in thrs:
 
 
 
+#python3 given_err.py 500101001 "1002-1029" "1021-1025[predict]" "500" 1>log/predict/500101001.out

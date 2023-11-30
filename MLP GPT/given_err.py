@@ -93,16 +93,16 @@ print("The testing err =", np.mean(counting))
 
 # 有要進行參數實驗再打開！！！
 
-# 對epochs進行實驗
-for epoch in [10, 20, 30, 40, 50]:
-    model = build_model()  # 假設有一個建立模型的函數
-    model.fit(X_train, y_train, epochs=epoch, batch_size=32, validation_split=0.1)
-    loss, mae = model.evaluate(X_test, y_test)
-    print(f'Epochs: {epoch}, Mean Absolute Error on Test Set: {mae}')
+# # 對epochs進行實驗
+# for epoch in [10, 20, 30, 40, 50]:
+#     model = build_model()  # 假設有一個建立模型的函數
+#     model.fit(X_train, y_train, epochs=epoch, batch_size=32, validation_split=0.1)
+#     loss, mae = model.evaluate(X_test, y_test)
+#     print(f'Epochs: {epoch}, Mean Absolute Error on Test Set: {mae}')
 
-# 對units進行實驗
-for unit in [16, 32, 64, 128]:
-    model = build_model(units=unit)  # 假設有一個建立模型的函數，接受units作為參數
-    model.fit(X_train, y_train, epochs=50, batch_size=32, validation_split=0.1)
-    loss, mae = model.evaluate(X_test, y_test)
-    print(f'Units: {unit}, Mean Absolute Error on Test Set: {mae}')
+# # 對units進行實驗
+# for unit in [16, 32, 64, 128]:
+#     model = build_model(units=unit)  # 假設有一個建立模型的函數，接受units作為參數
+#     model.fit(X_train, y_train, epochs=50, batch_size=32, validation_split=0.1)
+#     loss, mae = model.evaluate(X_test, y_test)
+#     print(f'Units: {unit}, Mean Absolute Error on Test Set: {mae}')
