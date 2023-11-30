@@ -78,7 +78,7 @@ counting = []
 
 with open(f"/Users/kaihuang1122/Documents/ML/Final/Combination/{sys.argv[3]}/{sys.argv[1]}.csv", "r") as fin:
     table = list(csv.reader(fin))[1:]
-sys.stderr.write("id, sbi\n")
+#sys.stderr.write("id, sbi\n")
 for i, prediction in enumerate(predictions):
     str = "2023%02d%02d_%s_%02d:%02d, %f\n"%(int(table[i][1]), int(table[i][2]), sys.argv[1], int(int(int(table[i][4])/60)), int(int(table[i][4])%60), prediction[0])
     sys.stderr.write(str)
