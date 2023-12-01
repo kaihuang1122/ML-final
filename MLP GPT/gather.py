@@ -16,7 +16,7 @@ def exe(x, y, z, w, vary):
 thrs = []
 
 for x in tqdm(open("/Users/kaihuang1122/Documents/ML/Final/html.2023.final.data/sno_test_set.txt").readlines()):
-    thrs.append(threading.Thread(target=exe(x, "1002-1127", "1021-1025[predict]", "2", "predict")))
+    thrs.append(threading.Thread(target=exe(x, "hours/1002-1202", "hours/1021-1025[predict]", "200", "predict")))
     #thrs.append(mp.Process(target=exe, args=(x, "1002-1121", "1028-1029", "20", "predict")))
     
 for i in thrs:

@@ -7,6 +7,8 @@ import sys
 import csv
 from datetime import datetime
 from tqdm import tqdm
+import threading
+
 
 # making dictionary of weather
 # index:   0   1      2    4                    5            6         7
@@ -19,10 +21,11 @@ for row in matrix:
 # making combinationing path
 # index:   0   1      2    3        4                             5         6
 # headers: ID, month, day, weekday, accumulated minutes (0-1439), capacity, bike amount
-from_to_path = [(f'/Users/kaihuang1122/Documents/ML/Final/Data tidy/{sys.argv[3]}version/{x[:-1]}.csv', f'/Users/kaihuang1122/Documents/ML/Final/Combination/{sys.argv[1]}-{sys.argv[2]}/{x[:-1]}.csv') for x in open("/Users/kaihuang1122/Documents/ML/Final/html.2023.final.data/sno_test_set.txt").readlines()]
+from_to_path = [(f'/Users/kaihuang1122/Documents/ML/Final/Data tidy/{sys.argv[3]}version/{x[:-1]}.csv', f'/Users/kaihuang1122/Documents/ML/Final/Combination/hours/{sys.argv[1]}-{sys.argv[2]}/{x[:-1]}.csv') for x in open("/Users/kaihuang1122/Documents/ML/Final/html.2023.final.data/sno_test_set.txt").readlines()]
 
 
-for fp in tqdm(from_to_path):
+#for fp in tqdm(from_to_path):
+def exec(fp):
     cont = True
     bikes = list(csv.reader(open(fp[0])))[1:]
     fh = open(fp[1], "w")
@@ -63,6 +66,16 @@ for fp in tqdm(from_to_path):
 
         temp += spot[-2:]
         writter.writerow(temp)
-        
+
+thrs = []
+for fp in tqdm(from_to_path): 
+    thrs.append(threading.Thread(target=exec(fp)))
+    
+for i in thrs:
+    i.start()
+
+for i in thrs:
+    i.join()
+
 # transformed headders:
 # ID, month, day, weekday, accumulated minutes, temperature, rainfall, relative humidity, Sun, Mon, Tue, Wed, Thu, Fri, Sat,,,s,i,n,,a,n,d,,c,o,s,,p,o,w,e,r,, rain is 0, <15, <25, >25, capacity, bike amount

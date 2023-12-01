@@ -11,7 +11,7 @@ from tqdm import tqdm
 # making dictionary of weather
 # index:   0   1      2    4                    5            6         7
 # headers: ID, month, day, accumulated minutes, temperature, rainfall, relative humidity
-matrix = list(csv.reader(open("/Users/kaihuang1122/Documents/ML/Final/Data tidy/Weather/Weatherdata.csv")))[1:]
+matrix = list(csv.reader(open("/Users/kaihuang1122/Documents/ML/Final/Data tidy/Weather/fixeddata.csv")))[1:]
 meta = dict()
 for row in matrix:
     meta[row[0]] = row
@@ -19,7 +19,7 @@ for row in matrix:
 # making combinationing path
 # index:   0   1      2    3        4                             5         6
 # headers: ID, month, day, weekday, accumulated minutes (0-1439), capacity, bike amount
-ca_to_path = [(f'/Users/kaihuang1122/Documents/ML/Final/Data tidy/1129version/{x[:-1]}.csv', f'/Users/kaihuang1122/Documents/ML/Final/Combination/{sys.argv[1]}-{sys.argv[2]}[predict]/{x[:-1]}.csv') for x in open("/Users/kaihuang1122/Documents/ML/Final/html.2023.final.data/sno_test_set.txt").readlines()]
+ca_to_path = [(f'/Users/kaihuang1122/Documents/ML/Final/Data tidy/1129version/{x[:-1]}.csv', f'/Users/kaihuang1122/Documents/ML/Final/Combination/hours/{sys.argv[1]}-{sys.argv[2]}[predict]/{x[:-1]}.csv') for x in open("/Users/kaihuang1122/Documents/ML/Final/html.2023.final.data/sno_test_set.txt").readlines()]
 
 
 for fp in tqdm(ca_to_path):
