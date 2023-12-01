@@ -15,7 +15,13 @@ for i in pageSource:
         temp1 = i.find('tem-C is-active">')
         temp2 = i.find('"rain">')
         temp3 = i.find('"hum">')
-        new_source.append([i[55:60], i[84:89], i[temp1+17:temp1+21], i[temp2+7:temp2+10], i[temp3+6:temp3+8]])
+        temc = i[temp1+17:temp1+21]
+        if(temc[-1] == ','):
+            temc = i[temp1+17:temp1+20]
+        rain = i[temp2+7:temp2+10]
+        if(rain[-1] == '.'):
+            rain = i[temp2+7:temp2+11]
+        new_source.append([i[55:60], i[84:89], i[temp1+17:temp1+21], rain, i[temp3+6:temp3+8]])
 
 fh = open("/Users/kaihuang1122/Documents/ML/Final/Collecting/temp/data.csv", "w")
 count = 0
