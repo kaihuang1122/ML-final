@@ -11,12 +11,14 @@ import multiprocessing as mp
 
 def exe(x, y, z, w, vary):
     os.system(f"python3 given_err.py {x[:-1]} {y} {z} {w} 1>log/{vary}/{x[:-1]}.out 2>output/{vary}/{x[:-1]}.csv")
+    os.system(f"python3 calculate.py")
 
 thrs = []
-for x in tqdm(open("/Users/kaihuang1122/Documents/ML/Final/html.2023.final.data/sno_test_set.txt").readlines()):
-    thrs.append(threading.Thread(target=exe(x, "1002-1127", "1021-1025[predict]", "50", "predict")))
-    #thrs.append(mp.Process(target=exe, args=(x, "1002-1127", "1021-1025[predict]", "20", "predict")))
-    
+for epochs in range(50):
+    for x in tqdm(open("/Users/kaihuang1122/Documents/ML/Final/html.2023.final.data/sno_test_set.txt").readlines()):
+        thrs.append(threading.Thread(target=exe(x, "1002-1003", "1128-1129", str(epochs), "predict")))
+        #thrs.append(mp.Process(target=exe, args=(x, "1002-1121", "1028-1029", "20", "predict")))
+        
 for i in thrs:
     i.start()
 
