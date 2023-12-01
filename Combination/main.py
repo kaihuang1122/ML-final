@@ -11,7 +11,7 @@ from tqdm import tqdm
 # making dictionary of weather
 # index:   0   1      2    4                    5            6         7
 # headers: ID, month, day, accumulated minutes, temperature, rainfall, relative humidity
-matrix = list(csv.reader(open("/Users/kaihuang1122/Documents/ML/Final/Data tidy/Weather/Weatherdata.csv")))[1:]
+matrix = list(csv.reader(open("/Users/kaihuang1122/Documents/ML/Final/Data tidy/Weather/fixeddata.csv")))[1:]
 meta = dict()
 for row in matrix:
     meta[row[0]] = row
