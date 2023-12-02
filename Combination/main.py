@@ -1,7 +1,7 @@
 #! /Library/Frameworks/Python.framework/Versions/3.11/bin/python3
 
 # Usage: python3 <MMDD for init> <MMDD for end (not included)> <MMDD for version>
-# 1002 1021 1130
+# 1002 1202 1202
 import numpy as np
 import sys
 import csv
