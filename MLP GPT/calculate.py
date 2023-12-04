@@ -4,10 +4,21 @@ import sys
 import os
 import numpy as np
 from tqdm import tqdm
+import matplotlib.pyplot as plt
 out = []
+black = []
 for x in (open("/Users/kaihuang1122/Documents/ML/Final/html.2023.final.data/sno_test_set.txt").readlines()):
     fh = open(f"/Users/kaihuang1122/Documents/ML/Final/MLP GPT/log/predict/{x[:-1]}.out")
-    table = fh.readlines()[-1].split(' ')[-1][:-1]
+    table = fh.readlines()
+    temp = ""
+    for i in table:
+        temp += i
+    
+    table = np.float64(temp.split('us/step - loss: ')[-1][0:6])
+    if table > 1.5:
+        black.append(x[:-1])
     out.append(np.float64(table))
 
-print(np.mean(out))
+print(black)
+plt.hist(out, bins=25)
+plt.show()

@@ -51,6 +51,6 @@ for x in tqdm(open("/Users/kaihuang1122/Documents/ML/Final/html.2023.final.data/
 
 
 
-with open("/Users/kaihuang1122/Downloads/sample_submission.csv") as fh:
-    table = list(csv.reader(fh))
-out_writer.writerows(table)
+# with open("/Users/kaihuang1122/Downloads/sample_submission.csv") as fh:
+#     table = list(csv.reader(fh))
+# out_writer.writerows(table)
