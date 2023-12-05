@@ -1,12 +1,12 @@
-[INFO  - 2023-12-05T21:40:33.298Z] GhostDriver - Main - running on port 49340
-[INFO  - 2023-12-05T21:40:34.035Z] Session [eb82c190-93b6-11ee-99ec-d3dfc362630c] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
-[INFO  - 2023-12-05T21:40:34.036Z] Session [eb82c190-93b6-11ee-99ec-d3dfc362630c] - page.customHeaders:  - {}
-[INFO  - 2023-12-05T21:40:34.037Z] Session [eb82c190-93b6-11ee-99ec-d3dfc362630c] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"mac-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
-[INFO  - 2023-12-05T21:40:34.038Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: eb82c190-93b6-11ee-99ec-d3dfc362630c
-[ERROR - 2023-12-05T21:40:40.523Z] Session [eb82c190-93b6-11ee-99ec-d3dfc362630c] - page.onError - msg: ReferenceError: Can't find variable: Set
+[INFO  - 2023-12-05T22:16:10.899Z] GhostDriver - Main - running on port 49377
+[INFO  - 2023-12-05T22:16:11.617Z] Session [e59c57a0-93bb-11ee-adfd-23e620e09751] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2023-12-05T22:16:11.618Z] Session [e59c57a0-93bb-11ee-adfd-23e620e09751] - page.customHeaders:  - {}
+[INFO  - 2023-12-05T22:16:11.619Z] Session [e59c57a0-93bb-11ee-adfd-23e620e09751] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"mac-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2023-12-05T22:16:11.620Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: e59c57a0-93bb-11ee-adfd-23e620e09751
+[ERROR - 2023-12-05T22:16:17.985Z] Session [e59c57a0-93bb-11ee-adfd-23e620e09751] - page.onError - msg: ReferenceError: Can't find variable: Set
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2023-12-05T21:40:40.527Z] Session [eb82c190-93b6-11ee-99ec-d3dfc362630c] - page.onError - stack:
+[ERROR - 2023-12-05T22:16:17.990Z] Session [e59c57a0-93bb-11ee-adfd-23e620e09751] - page.onError - stack:
   (anonymous function) (https://www.clarity.ms/s/0.7.20/clarity.js:2)
 
   phantomjs://platform/console++.js:263 in error
