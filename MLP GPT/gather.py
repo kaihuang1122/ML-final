@@ -16,7 +16,7 @@ def exe(x, y, z, w, vary):
 result = []
 fh = open("epoch\ count.csv", "w")
 
-for epoch in ([2]):
+for epoch in range(10):
     thrs = []
     for x in tqdm(open("/Users/kaihuang1122/Documents/ML/Final/html.2023.final.data/sno_test_set.txt").readlines()[0:]):
     #for x in tqdm(["500119051 ", "500119075 "]):
@@ -36,8 +36,8 @@ for epoch in ([2]):
     result += out
     # csv.writer(fh).writerow([result[-1])
 
-
-plt.scatter([1]*112,result)
+li = [0]*112+[1]*112+[2]*112+[3]*112+[4]*112+[5]*112+[6]*112+[7]*112+[8]*112+[9]*112+[10]*112
+plt.scatter(li,result)
 plt.show()
 
 # python3 given_err.py 500101001 "hours/1002-1128" "hours/total[predict]" "1" 1>log/predict/500101001.out
