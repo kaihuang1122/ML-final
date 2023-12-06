@@ -11,7 +11,7 @@ table1 = sorted(table1)
 print(table1)
 
 
-f2 = open("/Users/kaihuang1122/Documents/ML/Final/MLP GPT/average/touput.csv")
+f2 = open("/Users/kaihuang1122/Documents/ML/Final/MLP GPT/output/predict/transportition/output2.csv")
 
 
 table = []
