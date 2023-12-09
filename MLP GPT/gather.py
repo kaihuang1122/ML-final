@@ -16,11 +16,11 @@ def exe(x, y, z, w, vary):
 result = []
 fh = open("epoch\ count.csv", "w")
 
-for epoch in range(10):
+for epoch in range(5):
     thrs = []
     for x in tqdm(open("/Users/kaihuang1122/Documents/ML/Final/html.2023.final.data/sno_test_set.txt").readlines()[0:]):
     #for x in tqdm(["500119051 ", "500119075 "]):
-        thrs.append(threading.Thread(target=exe(x, "noweather/1002-1128", "noweather/1128-1202", str(epoch), "predict")))
+        thrs.append(threading.Thread(target=exe(x, "hours/1002-1209", "hours/1021-1025[predict]", str(epoch), "predict")))
         #thrs.append(mp.Process(target=exe, args=(x, "1002-1121", "1028-1029", "20", "predict")))
     for i in thrs:
         i.start()
@@ -36,7 +36,7 @@ for epoch in range(10):
     result += out
     # csv.writer(fh).writerow([result[-1])
 
-li = [0]*112+[1]*112+[2]*112+[3]*112+[4]*112+[5]*112+[6]*112+[7]*112+[8]*112+[9]*112+[10]*112
+li = [0]*112+[1]*112+[2]*112+[3]*112+[4]*112
 plt.scatter(li,result)
 plt.show()
 
