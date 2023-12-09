@@ -16,7 +16,7 @@ def exe(x, y, z, w, vary):
 result = []
 fh = open("epoch\ count.csv", "w")
 
-for epoch in range(5):
+for epoch in [2]:
     thrs = []
     for x in tqdm(open("/Users/kaihuang1122/Documents/ML/Final/html.2023.final.data/sno_test_set.txt").readlines()[0:]):
     #for x in tqdm(["500119051 ", "500119075 "]):
@@ -36,7 +36,7 @@ for epoch in range(5):
     result += out
     # csv.writer(fh).writerow([result[-1])
 
-li = [0]*112+[1]*112+[2]*112+[3]*112+[4]*112
+li = [0]*112 #+ [1]*112 + [2]*112 + [3]*112 + [4]*112
 plt.scatter(li,result)
 plt.show()
 
