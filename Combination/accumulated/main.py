@@ -1,7 +1,7 @@
 #! /Library/Frameworks/Python.framework/Versions/3.11/bin/python3
 
 # Usage: python3 <MMDD for init> <MMDD for end (not included)> <MMDD for version>
-# 1127 1202 1202
+# 1002 1209 1209
 import numpy as np
 import sys
 import csv
@@ -30,7 +30,7 @@ def exec(fp):
     bikes = list(csv.reader(open(fp[0])))[1:]
     fh = open(fp[1], "w")
     writter = csv.writer(fh)
-    fh.write("ID, month, day, weekday, accumulated minutes, temperature, accu rainfall, past rainfall, relative humidity, Sun, Mon, Tue, Wed, Thu, Fri, Sat,,,s,i,n,,a,n,d,,c,o,s,,p,o,w,e,r,, rain is 0, <15, <25, >25, rain is 0, <1, <2, >2, capacity, bike amount\n")
+    fh.write("ID, month, day, weekday, accumulated minutes, temperature, accu rainfall, relative humidity, Sun, Mon, Tue, Wed, Thu, Fri, Sat,,,s,i,n,,a,n,d,,c,o,s,,p,o,w,e,r,, rain is 0, <15, <25, >25, capacity, bike amount\n")
     for spot in bikes:
         if cont and ((spot[1]+"%02d"%int(spot[2])) != sys.argv[1]):
             continue
