@@ -11,7 +11,7 @@ meta = dict()
 for row in matrix:
     meta[row[0]] = row
 
-matrix = list(csv.reader(open("/Users/kaihuang1122/Documents/ML/Final/Data tidy/Weather/predict.csv")))[1:]
+matrix = list(csv.reader(open("/Users/kaihuang1122/Documents/ML/Final/Data tidy/Weather/predict2.csv")))[1:]
 
 for row in matrix:
     meta[row[0]] = row
@@ -73,8 +73,8 @@ for fp in tqdm(ca_to_path):
         writter.writerow(temp)
         start += 60
 
-    start = int(datetime(2023, int(12), int(4), 0, 0, 0).timestamp())
-    end   = int(datetime(2023, int(12), int(11), 0, 0, 0).timestamp())
+    start = int(datetime(2023, int(12), int(11), 0, 0, 0).timestamp())
+    end   = int(datetime(2023, int(12), int(18), 0, 0, 0).timestamp())
 
     while start < end:
         time = datetime.fromtimestamp(start)
