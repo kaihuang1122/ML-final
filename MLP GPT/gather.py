@@ -20,7 +20,7 @@ for epoch in [2]:
     thrs = []
     for x in tqdm(open("/Users/kaihuang1122/Documents/ML/Final/html.2023.final.data/sno_test_set.txt").readlines()[0:]):
     #for x in tqdm(["500119051 ", "500119075 "]):
-        thrs.append(threading.Thread(target=exe(x, "hours/1002-1210", "hours/1021-1025[predict]", str(epoch), "predict")))
+        thrs.append(threading.Thread(target=exe(x, "hours/1002-1209", "hours/total[predict]", str(epoch), "predict")))
         #thrs.append(mp.Process(target=exe, args=(x, "1002-1121", "1028-1029", "20", "predict")))
     for i in thrs:
         i.start()

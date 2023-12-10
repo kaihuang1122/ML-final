@@ -81,11 +81,11 @@ for fp in tqdm(ca_to_path):
         spot =[str(x) for x in [start, time.month, time.day, time.weekday(), time.hour*60+time.minute, capacity, -1]]
         # headers: ID, month, day, weekday, accumulated minutes (0-1439), capacity, bike amount
         # for spot in bikes:
-        if cont and ((spot[1]+"%02d"%int(spot[2])) != "1204"):
+        if cont and ((spot[1]+"%02d"%int(spot[2])) != "1211"):
             continue
         else:
             cont = False
-        if((spot[1]+"%02d"%int(spot[2])) == "1211"):
+        if((spot[1]+"%02d"%int(spot[2])) == "1218"):
             break
         #print(spot)
         #temp = spot[:-2] + meta[spot[0]][-3:]
