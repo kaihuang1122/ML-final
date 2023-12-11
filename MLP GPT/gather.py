@@ -16,7 +16,7 @@ def exe(x, y, z, w, u, vary):
 result = []
 fh = open("epoch\ count.csv", "w")
 
-for units in range(1, 2):
+for units in range(1, 11):
     if os.fork() == 0:
         for epoch in range(1, 11):
             thrs = []
@@ -24,7 +24,6 @@ for units in range(1, 2):
             #for x in tqdm(["500119051 ", "500119075 "]):
                 thrs.append(threading.Thread(target=exe(x, "hours/1002-1202", "hours/1202-1209", str(epoch), str(units), "predict")))
                 
-                break
 
             for i in thrs:
                 i.start()
@@ -37,13 +36,10 @@ for units in range(1, 2):
                 table = fh.readlines()[-1].split(' ')[-1][:-1]
                 out.append(np.float64(table))
 
-                break
             print(np.mean(out))
             result += out
 
-        li = [1]*1 #+ [2]*112 + [3]*112 + [4]*112 + [5]*112 + [6]*112 + [7]*112 + [8]*112 + [9]*112 + [10]*112
-        for i in range(100):
-            li += [i]*112
+        li = [1]*112 + [2]*112 + [3]*112 + [4]*112 + [5]*112 + [6]*112 + [7]*112 + [8]*112 + [9]*112 + [10]*112
 
         plt.scatter(li,result)
         plt.savefig(f"/Users/kaihuang1122/Documents/ML/Final/MLP GPT/graph/units_{units}.png")

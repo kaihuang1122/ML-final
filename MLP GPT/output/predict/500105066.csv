@@ -1,5 +1,0 @@
-Traceback (most recent call last):
-  File "/Users/kaihuang1122/Documents/ML/Final/MLP GPT/given_err.py", line 38, in <module>
-    model.add(Dense(units=2**sys.argv[5], activation='relu', input_dim=X_train.shape[1]))
-                          ~^^~~~~~~~~~~~
-TypeError: unsupported operand type(s) for ** or pow(): 'int' and 'str'
