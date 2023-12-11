@@ -16,13 +16,14 @@ def exe(x, y, z, w, u, vary):
 result = []
 fh = open("epoch\ count.csv", "w")
 
-for units in range(1, 11):
+for units in range(1, 9):
     if os.fork() == 0:
+        li = []
         for epoch in range(1, 11):
             thrs = []
             for x in tqdm(open("/Users/kaihuang1122/Documents/ML/Final/html.2023.final.data/sno_test_set.txt").readlines()[0:]):
             #for x in tqdm(["500119051 ", "500119075 "]):
-                thrs.append(threading.Thread(target=exe(x, "hours/1002-1202", "hours/1202-1209", str(epoch), str(units), "predict")))
+                thrs.append(threading.Thread(target=exe(x, "hours/1002-1202", "hours/1202-1209", str(epoch), str(units), f"predict{units}")))
                 
 
             for i in thrs:
@@ -32,15 +33,18 @@ for units in range(1, 11):
             out = []
             # collect error
             for x in (open("/Users/kaihuang1122/Documents/ML/Final/html.2023.final.data/sno_test_set.txt").readlines()[0:]):
-                fh = open(f"/Users/kaihuang1122/Documents/ML/Final/MLP GPT/log/predict/{x[:-1]}.out")
+                fh = open(f"/Users/kaihuang1122/Documents/ML/Final/MLP GPT/log/predict{units}/{x[:-1]}.out")
                 table = fh.readlines()[-1].split(' ')[-1][:-1]
                 out.append(np.float64(table))
 
             print(np.mean(out))
             result += out
-
+            for i in epoch:
+                li += [epoch]*112
+            plt.scatter(li,result)
+            plt.savefig(f"/Users/kaihuang1122/Documents/ML/Final/MLP GPT/graph/units_{units}.png")
+            
         li = [1]*112 + [2]*112 + [3]*112 + [4]*112 + [5]*112 + [6]*112 + [7]*112 + [8]*112 + [9]*112 + [10]*112
-
         plt.scatter(li,result)
         plt.savefig(f"/Users/kaihuang1122/Documents/ML/Final/MLP GPT/graph/units_{units}.png")
 
