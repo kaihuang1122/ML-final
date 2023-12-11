@@ -39,7 +39,7 @@ for units in range(1, 9):
 
             print(np.mean(out))
             result += out
-            for i in epoch:
+            for i in range(epoch):
                 li += [epoch]*112
             plt.scatter(li,result)
             plt.savefig(f"/Users/kaihuang1122/Documents/ML/Final/MLP GPT/graph/units_{units}.png")
