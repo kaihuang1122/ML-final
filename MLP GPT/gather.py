@@ -38,6 +38,9 @@ for epoch in [2]:
 
 li = [0]*112 #+ [1]*112 + [2]*112 + [3]*112 + [4]*112
 plt.scatter(li,result)
-plt.show()
+plt.savefig
+
+
+# plt.show()
 
 # python3 given_err.py 500101001 "hours/1002-1128" "hours/total[predict]" "1" 1>log/predict/500101001.out
