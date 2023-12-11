@@ -35,14 +35,14 @@ X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size=0.2, 
 
 # 建立MLP模型
 model = Sequential()
-model.add(Dense(units=64, activation='relu', input_dim=X_train.shape[1]))
+model.add(Dense(units=2**int(sys.argv[5]), activation='relu', input_dim=X_train.shape[1]))
 model.add(Dense(units=1, activation='linear'))
 
 # 編譯模型
 model.compile(optimizer='adam', loss=K_err, metrics=['mae'])
 
 # 訓練模型
-model.fit(X_train, y_train, epochs=int(sys.argv[4]), batch_size=32, validation_split=0.1)
+model.fit(X_train, y_train, epochs=int(sys.argv[4]), batch_size=2**(int(sys.argv[5])-1), validation_split=0.1)
 
 # 評估模型
 loss, mae = model.evaluate(X_test, y_test)
