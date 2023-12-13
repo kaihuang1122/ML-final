@@ -16,11 +16,11 @@ def exe(x, y, z, w, u, vary):
 
 
 if __name__ == '__main__':
-    for units in range(7, 11):
+    for units in range(5, 8):
         #if os.fork() == 0:
         li = []
         result = []
-        for epoch in range(1, 6):
+        for epoch in range(1, 4):
             thrs = []
                 #exe(x, "hours/1002-1202", "hours/1202-1209", str(epoch), str(units), f"predict")
             #for x in tqdm(open("/Users/kaihuang1122/Documents/ML/Final/html.2023.final.data/sno_test_set.txt").readlines()[0:]):
@@ -43,13 +43,13 @@ if __name__ == '__main__':
                 out.append(np.float64(table))
 
             print(np.mean(out))
-            with open(f"/Users/kaihuang1122/Documents/ML/Final/MLP GPT/graph/units_{units}.txt", "a") as f:
+            with open(f"/Users/kaihuang1122/Documents/ML/Final/MLP GPT/graph/units_{units}-1.txt", "a") as f:
                 f.write(f"{np.mean(out)}\n")
             result += out
             li += [epoch]*112
             print(len(li), len(result))
             plt.scatter(li,result)
-            plt.savefig(f"/Users/kaihuang1122/Documents/ML/Final/MLP GPT/graph/units_{units}.png")
+            plt.savefig(f"/Users/kaihuang1122/Documents/ML/Final/MLP GPT/graph/units_{units}-1.png")
             
 
 
