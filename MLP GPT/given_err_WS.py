@@ -17,7 +17,7 @@ def np_err(b, b_hat):
     return 3*np.abs((b-b_hat)/s)*(np.abs(b/s-1/3)+np.abs(b/s-2/3))
 
 # 讀取CSV數據
-with open(f"/Users/kaihuang1122/Documents/ML/Final/Combination/{sys.argv[2]}/{sys.argv[1]}.csv", "r") as fin:
+with open(f"/tmp2/B11902035/Final/Combination/{sys.argv[2]}/{sys.argv[1]}.csv", "r") as fin:
     reader = csv.reader(fin)
     next(reader)  # 跳過標題行
     data = [row for row in reader]
@@ -51,7 +51,7 @@ print(f'Mean Absolute Error on Test Set: {mae}')
 
 # 進行預測
 predictions = model.predict(X_test)
-#model.save(f"/Users/kaihuang1122/Documents/ML/Final/MLP GPT/model/{sys.argv[3]}/{sys.argv[1]}.tf", True, "tf")
+#model.save(f"/tmp2/B11902035/Final/MLP GPT/model/{sys.argv[3]}/{sys.argv[1]}.tf", True, "tf")
 import csv
 import numpy as np
 from sklearn.preprocessing import StandardScaler
@@ -59,7 +59,7 @@ from keras.models import load_model
 
 
 # 讀取新的CSV數據
-with open(f"/Users/kaihuang1122/Documents/ML/Final/Combination/{sys.argv[3]}/{sys.argv[1]}.csv", "r") as fin:
+with open(f"/tmp2/B11902035/Final/Combination/{sys.argv[3]}/{sys.argv[1]}.csv", "r") as fin:
     reader = csv.reader(fin)
     next(reader)  # 跳過標題行
     new_data = [row for row in reader]
@@ -77,7 +77,7 @@ predictions = model.predict(X_new_scaled)
 counting = []
 # 打印預測結果
 
-with open(f"/Users/kaihuang1122/Documents/ML/Final/Combination/{sys.argv[3]}/{sys.argv[1]}.csv", "r") as fin:
+with open(f"/tmp2/B11902035/Final/Combination/{sys.argv[3]}/{sys.argv[1]}.csv", "r") as fin:
     table = list(csv.reader(fin))[1:]
 #sys.stderr.write("id, sbi\n")
 for i, prediction in enumerate(predictions):

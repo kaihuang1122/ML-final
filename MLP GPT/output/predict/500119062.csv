@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/Users/kaihuang1122/Documents/ML/Final/MLP GPT/given_err.py", line 38, in <module>
+    model.add(Dense(units=2**int(sys.argv[5]-1), activation='relu', input_dim=X_train.shape[1]))
+                                 ~~~~~~~~~~~^~
+TypeError: unsupported operand type(s) for -: 'str' and 'int'
