@@ -50,7 +50,7 @@ print(f'Mean Absolute Error on Test Set: {mae}')
 
 # 進行預測
 predictions = model.predict(X_test)
-model.save(f"/Users/kaihuang1122/Documents/ML/Final/MLP GPT/model/{sys.argv[3]}/{sys.argv[1]}.tf", True, "tf")
+#model.save(f"/Users/kaihuang1122/Documents/ML/Final/MLP GPT/model/{sys.argv[3]}/{sys.argv[1]}.tf", True, "tf")
 import csv
 import numpy as np
 from sklearn.preprocessing import StandardScaler

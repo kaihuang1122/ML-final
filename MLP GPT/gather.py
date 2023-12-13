@@ -22,11 +22,11 @@ if __name__ == '__main__':
         result = []
         for epoch in range(1, 6):
             thrs = []
+                #exe(x, "hours/1002-1202", "hours/1202-1209", str(epoch), str(units), f"predict")
             #for x in tqdm(open("/Users/kaihuang1122/Documents/ML/Final/html.2023.final.data/sno_test_set.txt").readlines()[0:]):
-                #exe(x, "hours/1002-1202", "hours/1202-1209", str(epoch), str(units), f"predict{units}")
             pbar = tqdm(total=112)
             upd = lambda *args: pbar.update()
-            itr = [ (x, "hours/1002-1202", "hours/1202-1209", str(epoch), str(units), f"predict{units}") for x in open("/Users/kaihuang1122/Documents/ML/Final/html.2023.final.data/sno_test_set.txt").readlines()[0:] ]
+            itr = [ (x, "hours/1002-1202", "hours/1202-1209", str(epoch), str(units), f"predict") for x in open("/Users/kaihuang1122/Documents/ML/Final/html.2023.final.data/sno_test_set.txt").readlines()[0:] ]
             
             with Pool(10) as p:
                 for x in itr:
@@ -38,7 +38,7 @@ if __name__ == '__main__':
             # collect error
             out = []
             for x in (open("/Users/kaihuang1122/Documents/ML/Final/html.2023.final.data/sno_test_set.txt").readlines()[0:]):
-                fh = open(f"/Users/kaihuang1122/Documents/ML/Final/MLP GPT/log/predict{units}/{x[:-1]}.out")
+                fh = open(f"/Users/kaihuang1122/Documents/ML/Final/MLP GPT/log/predict/{x[:-1]}.out")
                 table = fh.readlines()[-1].split(' ')[-1][:-1]
                 out.append(np.float64(table))
 
@@ -50,6 +50,7 @@ if __name__ == '__main__':
             print(len(li), len(result))
             plt.scatter(li,result)
             plt.savefig(f"/Users/kaihuang1122/Documents/ML/Final/MLP GPT/graph/units_{units}.png")
+            
 
 
 # python3 given_err.py 500101001 "hours/1002-1128" "hours/total[predict]" "1" 1>log/predict/500101001.out
