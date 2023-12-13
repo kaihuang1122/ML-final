@@ -16,7 +16,7 @@ def exe(x, y, z, w, u, vary):
 result = []
 
 if __name__ == '__main__':
-    for units in range(5, 11):
+    for units in range(6, 11):
         #if os.fork() == 0:
         li = []
         for epoch in range(1, 6):
