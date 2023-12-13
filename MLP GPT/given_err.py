@@ -42,7 +42,7 @@ model.add(Dense(units=1, activation='linear'))
 model.compile(optimizer='adam', loss=K_err, metrics=['mae'])
 
 # 訓練模型
-model.fit(X_train, y_train, epochs=int(sys.argv[4]), batch_size=64, validation_split=0.1)
+model.fit(X_train, y_train, epochs=int(sys.argv[4]), batch_size=16, validation_split=0.1)
 
 # 評估模型
 loss, mae = model.evaluate(X_test, y_test)

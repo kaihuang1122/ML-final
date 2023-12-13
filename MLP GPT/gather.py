@@ -16,7 +16,7 @@ def exe(x, y, z, w, u, vary):
 
 
 if __name__ == '__main__':
-    for units in range(6, 11):
+    for units in range(6, 7):
         #if os.fork() == 0:
         li = []
         result = []
@@ -47,7 +47,7 @@ if __name__ == '__main__':
             li += [epoch]*112
             print(len(li), len(result))
             plt.scatter(li,result)
-            plt.savefig(f"/Users/kaihuang1122/Documents/ML/Final/MLP GPT/graph/units_{units}.png")
+            plt.savefig(f"/Users/kaihuang1122/Documents/ML/Final/MLP GPT/graph/units_{units}-2.png")
 
 
 # python3 given_err.py 500101001 "hours/1002-1128" "hours/total[predict]" "1" 1>log/predict/500101001.out
