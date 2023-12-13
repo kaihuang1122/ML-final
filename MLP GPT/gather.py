@@ -13,12 +13,13 @@ from multiprocessing import Pool
 def exe(x, y, z, w, u, vary):
     os.system(f"python3 given_err.py {x[:-1]} {y} {z} {w} {u} 1>/Users/kaihuang1122/Documents/ML/Final/MLP\ GPT/log/{vary}/{x[:-1]}.out 2>/Users/kaihuang1122/Documents/ML/Final/MLP\ GPT/output/{vary}/{x[:-1]}.csv")
     #os.system(f"python3 given_err.py 500119051 hours/1002-1202 hours/1202-1209 0 64")
-result = []
+
 
 if __name__ == '__main__':
     for units in range(6, 11):
         #if os.fork() == 0:
         li = []
+        result = []
         for epoch in range(1, 6):
             thrs = []
             #for x in tqdm(open("/Users/kaihuang1122/Documents/ML/Final/html.2023.final.data/sno_test_set.txt").readlines()[0:]):
@@ -44,6 +45,7 @@ if __name__ == '__main__':
             print(np.mean(out))
             result += out
             li += [epoch]*112
+            print(len(li), len(result))
             plt.scatter(li,result)
             plt.savefig(f"/Users/kaihuang1122/Documents/ML/Final/MLP GPT/graph/units_{units}.png")
 
