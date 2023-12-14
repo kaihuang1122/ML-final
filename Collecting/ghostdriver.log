@@ -1,12 +1,5 @@
-[INFO  - 2023-12-13T22:52:25.775Z] GhostDriver - Main - running on port 60104
-[INFO  - 2023-12-13T22:52:29.044Z] Session [4ac355d0-9a0a-11ee-a28e-f7b7ca2ccb21] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
-[INFO  - 2023-12-13T22:52:29.045Z] Session [4ac355d0-9a0a-11ee-a28e-f7b7ca2ccb21] - page.customHeaders:  - {}
-[INFO  - 2023-12-13T22:52:29.045Z] Session [4ac355d0-9a0a-11ee-a28e-f7b7ca2ccb21] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"mac-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
-[INFO  - 2023-12-13T22:52:29.047Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 4ac355d0-9a0a-11ee-a28e-f7b7ca2ccb21
-[ERROR - 2023-12-13T22:52:34.338Z] Session [4ac355d0-9a0a-11ee-a28e-f7b7ca2ccb21] - page.onError - msg: ReferenceError: Can't find variable: Set
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2023-12-13T22:52:34.341Z] Session [4ac355d0-9a0a-11ee-a28e-f7b7ca2ccb21] - page.onError - stack:
-  (anonymous function) (https://www.clarity.ms/s/0.7.20/clarity.js:2)
-
-  phantomjs://platform/console++.js:263 in error
+[INFO  - 2023-12-14T04:45:27.058Z] GhostDriver - Main - running on port 60475
+[INFO  - 2023-12-14T04:45:28.018Z] Session [9a69b170-9a3b-11ee-9f5a-77bbc276351d] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2023-12-14T04:45:28.019Z] Session [9a69b170-9a3b-11ee-9f5a-77bbc276351d] - page.customHeaders:  - {}
+[INFO  - 2023-12-14T04:45:28.019Z] Session [9a69b170-9a3b-11ee-9f5a-77bbc276351d] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"mac-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2023-12-14T04:45:28.021Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 9a69b170-9a3b-11ee-9f5a-77bbc276351d
