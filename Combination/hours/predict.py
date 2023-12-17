@@ -73,19 +73,19 @@ for fp in tqdm(ca_to_path):
         writter.writerow(temp)
         start += 60
 
-    start = int(datetime(2023, int(12), int(11), 0, 0, 0).timestamp())
-    end   = int(datetime(2023, int(12), int(18), 0, 0, 0).timestamp())
+    start = int(datetime(2023, int(12), int(18), 0, 0, 0).timestamp())
+    end   = int(datetime(2023, int(12), int(25), 0, 0, 0).timestamp())
 
     while start < end:
         time = datetime.fromtimestamp(start)
         spot =[str(x) for x in [start, time.month, time.day, time.weekday(), time.hour*60+time.minute, capacity, -1]]
         # headers: ID, month, day, weekday, accumulated minutes (0-1439), capacity, bike amount
         # for spot in bikes:
-        if cont and ((spot[1]+"%02d"%int(spot[2])) != "1211"):
+        if cont and ((spot[1]+"%02d"%int(spot[2])) != "1218"):
             continue
         else:
             cont = False
-        if((spot[1]+"%02d"%int(spot[2])) == "1218"):
+        if((spot[1]+"%02d"%int(spot[2])) == "1225"):
             break
         #print(spot)
         #temp = spot[:-2] + meta[spot[0]][-3:]
