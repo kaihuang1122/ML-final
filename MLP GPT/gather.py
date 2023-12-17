@@ -12,7 +12,7 @@ from multiprocessing import Pool
 
 def exe(x, y, z, w, u, vary):
     pair = open(f"/Users/kaihuang1122/Documents/ML/Final/MLP GPT/paramiter/{x[:-1]}_p.out").readline().split(",")
-    #[w, u] = pair
+    [w, u] = pair
     os.system(f"python3 given_err.py {x[:-1]} {y} {z} {w} {u} 1>/Users/kaihuang1122/Documents/ML/Final/MLP\ GPT/log/{vary}/{x[:-1]}.out 2>/Users/kaihuang1122/Documents/ML/Final/MLP\ GPT/output/{vary}/{x[:-1]}.csv")
     #os.system(f"python3 given_err.py 500119051 hours/1002-1202 hours/1202-1209 0 1")
 
