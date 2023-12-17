@@ -23,7 +23,7 @@ def earlystop(x):
         #itr = (x, "hours/1002-1202", "hours/1202-1209", str(epoch), str(units), f"predict{units}")
         exe(x, "hours/1002-1202", "hours/1202-1209", str(epoch), str(units), f"predict{units}")
         fh = open(f"/Users/kaihuang1122/Documents/ML/Final/MLP GPT/log/predict{units}/{x[:-1]}.out")
-        error = fh.readlines()[-1].split(' ')[-1][:-1]
+        error = float(fh.readlines()[-1].split(' ')[-1][:-1])
         if (error < prev_error):
             final_epoch = epoch
             prev_error = error
@@ -31,10 +31,10 @@ def earlystop(x):
             break
     exe(x, "hours/1002-1202", "hours/1202-1209", str(epoch), str(7), f"predict{units}")
     fh = open(f"/Users/kaihuang1122/Documents/ML/Final/MLP GPT/log/predict{units}/{x[:-1]}.out")
-    error = fh.readlines()[-1].split(' ')[-1][:-1]
+    error = float(fh.readlines()[-1].split(' ')[-1][:-1])
     if (error < prev_error):
         units = 7
-    fh = open(f"/Users/kaihuang1122/Documents/ML/Final/MLP GPT/log/predict{units}/{x[:-1]}_paramiter.out")
+    fh = open(f"/Users/kaihuang1122/Documents/ML/Final/MLP GPT/paramiter/{x[:-1]}_p.out", "w")
     fh.write(f"{epoch},{units}")
 
 
@@ -50,11 +50,12 @@ if __name__ == '__main__':
     upd = lambda *args: pbar.update()    
     with Pool(10) as p:
         for x in open("/Users/kaihuang1122/Documents/ML/Final/html.2023.final.data/sno_test_set.txt").readlines()[0:]:
-            p.map_async(earlystop, x, callback=upd)
-            #p.apply_async(earlystop, x, callback=upd)
+            #p.map_async(earlystop, x, callback=upd)
+            p.apply_async(earlystop, [x], callback=upd)
         p.close()
         p.join()
-
+    # for x in open("/Users/kaihuang1122/Documents/ML/Final/html.2023.final.data/sno_test_set.txt").readlines()[0:]:
+    #     earlystop(x)
     # collect error
     units = 6
     out = []

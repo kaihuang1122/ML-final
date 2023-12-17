@@ -1,5 +1,0 @@
-Traceback (most recent call last):
-  File "/Users/kaihuang1122/Documents/ML/Final/MLP GPT/given_err.py", line 20, in <module>
-    with open(f"/Users/kaihuang1122/Documents/ML/Final/Combination/{sys.argv[2]}/{sys.argv[1]}.csv", "r") as fin:
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-FileNotFoundError: [Errno 2] No such file or directory: '/Users/kaihuang1122/Documents/ML/Final/Combination/hours/1202-1209/hours/1002-1202.csv'

@@ -1,5 +1,35 @@
 Traceback (most recent call last):
-  File "/Users/kaihuang1122/Documents/ML/Final/MLP GPT/given_err.py", line 38, in <module>
-    model.add(Dense(units=2**int(sys.argv[5]-1), activation='relu', input_dim=X_train.shape[1]))
-                                 ~~~~~~~~~~~^~
-TypeError: unsupported operand type(s) for -: 'str' and 'int'
+  File "/Users/kaihuang1122/Documents/ML/Final/MLP GPT/given_err.py", line 8, in <module>
+    from keras.models import Sequential
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/keras/__init__.py", line 3, in <module>
+    from keras import __internal__
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/keras/__internal__/__init__.py", line 3, in <module>
+    from keras.__internal__ import backend
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/keras/__internal__/backend/__init__.py", line 3, in <module>
+    from keras.src.backend import _initialize_variables as initialize_variables
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/keras/src/__init__.py", line 21, in <module>
+    from keras.src import applications
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/keras/src/applications/__init__.py", line 18, in <module>
+    from keras.src.applications.convnext import ConvNeXtBase
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/keras/src/applications/convnext.py", line 26, in <module>
+    import tensorflow.compat.v2 as tf
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/tensorflow/__init__.py", line 48, in <module>
+    from tensorflow._api.v2 import __internal__
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/tensorflow/_api/v2/__internal__/__init__.py", line 8, in <module>
+    from tensorflow._api.v2.__internal__ import autograph
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/tensorflow/_api/v2/__internal__/autograph/__init__.py", line 8, in <module>
+    from tensorflow.python.autograph.core.ag_ctx import control_status_ctx # line: 34
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/tensorflow/python/autograph/core/ag_ctx.py", line 21, in <module>
+    from tensorflow.python.autograph.utils import ag_logging
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/tensorflow/python/autograph/utils/__init__.py", line 17, in <module>
+    from tensorflow.python.autograph.utils.context_managers import control_dependency_on_returns
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/tensorflow/python/autograph/utils/context_managers.py", line 19, in <module>
+    from tensorflow.python.framework import ops
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/tensorflow/python/framework/ops.py", line 40, in <module>
+    from tensorflow.python import pywrap_tensorflow
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/tensorflow/python/pywrap_tensorflow.py", line 34, in <module>
+    self_check.preload_check()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/tensorflow/python/platform/self_check.py", line 63, in preload_check
+    from tensorflow.python.platform import _pywrap_cpu_feature_guard
+KeyboardInterrupt
