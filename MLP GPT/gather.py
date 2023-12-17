@@ -12,7 +12,7 @@ from multiprocessing import Pool
 
 def exe(x, y, z, w, u, vary):
     pair = open(f"/Users/kaihuang1122/Documents/ML/Final/MLP GPT/paramiter/{x[:-1]}_p.out").readline().split(",")
-    os.system(f"python3 given_err.py {x[:-1]} {y} {z} {pair[1]} {pair[2][:-1]} 1>/Users/kaihuang1122/Documents/ML/Final/MLP\ GPT/log/{vary}/{x[:-1]}.out 2>/Users/kaihuang1122/Documents/ML/Final/MLP\ GPT/output/{vary}/{x[:-1]}.csv")
+    os.system(f"python3 given_err.py {x[:-1]} {y} {z} {pair[1]} {pair[2]} 1>/Users/kaihuang1122/Documents/ML/Final/MLP\ GPT/log/{vary}/{x[:-1]}.out 2>/Users/kaihuang1122/Documents/ML/Final/MLP\ GPT/output/{vary}/{x[:-1]}.csv")
     #os.system(f"python3 given_err.py 500119051 hours/1002-1202 hours/1202-1209 0 64")
 
 
@@ -27,7 +27,7 @@ if __name__ == '__main__':
             #for x in tqdm(open("/Users/kaihuang1122/Documents/ML/Final/html.2023.final.data/sno_test_set.txt").readlines()[0:]):
             pbar = tqdm(total=112)
             upd = lambda *args: pbar.update()
-            itr = [ (x, "hours/1002-1202", "hours/1202-1209", str(epoch), str(units), f"predict{units}") for x in open("/Users/kaihuang1122/Documents/ML/Final/html.2023.final.data/sno_test_set.txt").readlines()[0:] ]
+            itr = [ (x, "hours/1002-1202", "hours/1202-1209", str(epoch), str(units), f"predict") for x in open("/Users/kaihuang1122/Documents/ML/Final/html.2023.final.data/sno_test_set.txt").readlines()[0:] ]
             
             with Pool(10) as p:
                 for x in itr:
