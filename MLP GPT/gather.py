@@ -12,16 +12,18 @@ from multiprocessing import Pool
 
 def exe(x, y, z, w, u, vary):
     pair = open(f"/Users/kaihuang1122/Documents/ML/Final/MLP GPT/paramiter/{x[:-1]}_p.out").readline().split(",")
-    os.system(f"python3 given_err.py {x[:-1]} {y} {z} {pair[1]} {pair[2]} 1>/Users/kaihuang1122/Documents/ML/Final/MLP\ GPT/log/{vary}/{x[:-1]}.out 2>/Users/kaihuang1122/Documents/ML/Final/MLP\ GPT/output/{vary}/{x[:-1]}.csv")
-    #os.system(f"python3 given_err.py 500119051 hours/1002-1202 hours/1202-1209 0 64")
+
+    [w, u] = pair
+    os.system(f"python3 given_err.py {x[:-1]} {y} {z} {w} {u} 1>/Users/kaihuang1122/Documents/ML/Final/MLP\ GPT/log/{vary}/{x[:-1]}.out 2>/Users/kaihuang1122/Documents/ML/Final/MLP\ GPT/output/{vary}/{x[:-1]}.csv")
+    #os.system(f"python3 given_err.py 500119051 hours/1002-1202 hours/1202-1209 0 1")
 
 
 if __name__ == '__main__':
-    for units in range(5, 8):
+    for units in range(6, 7):
         #if os.fork() == 0:
         li = []
         result = []
-        for epoch in range(1, 5):
+        for epoch in range(2, 3):
             thrs = []
                 #exe(x, "hours/1002-1202", "hours/1202-1209", str(epoch), str(units), f"predict")
             #for x in tqdm(open("/Users/kaihuang1122/Documents/ML/Final/html.2023.final.data/sno_test_set.txt").readlines()[0:]):
@@ -44,13 +46,13 @@ if __name__ == '__main__':
                 out.append(np.float64(table))
 
             print(np.mean(out))
-            with open(f"/Users/kaihuang1122/Documents/ML/Final/MLP GPT/graph/units_{units}-2L.txt", "a") as f:
-                f.write(f"{np.mean(out)}\n")
-            result += out
-            li += [epoch]*112
-            print(len(li), len(result))
-            plt.scatter(li,result)
-            plt.savefig(f"/Users/kaihuang1122/Documents/ML/Final/MLP GPT/graph/units_{units}-2L.png")
+            # with open(f"/Users/kaihuang1122/Documents/ML/Final/MLP GPT/graph/units_{units}-2L.txt", "a") as f:
+            #     f.write(f"{np.mean(out)}\n")
+            # result += out
+            # li += [epoch]*112
+            # print(len(li), len(result))
+            # plt.scatter(li,result)
+            # plt.savefig(f"/Users/kaihuang1122/Documents/ML/Final/MLP GPT/graph/units_{units}-2L.png")
             
 
 
