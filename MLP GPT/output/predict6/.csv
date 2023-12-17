@@ -1,43 +1,5 @@
 Traceback (most recent call last):
-  File "/Users/kaihuang1122/Documents/ML/Final/MLP GPT/given_err.py", line 6, in <module>
-    from sklearn.model_selection import train_test_split
-  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/sklearn/__init__.py", line 83, in <module>
-    from .base import clone
-  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/sklearn/base.py", line 19, in <module>
-    from .utils import _IS_32BIT
-  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/sklearn/utils/__init__.py", line 19, in <module>
-    from . import _joblib, metadata_routing
-  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/sklearn/utils/_joblib.py", line 7, in <module>
-    import joblib
-  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/joblib/__init__.py", line 129, in <module>
-    from .parallel import Parallel
-  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/joblib/parallel.py", line 31, in <module>
-    from ._parallel_backends import (FallbackToBackend, MultiprocessingBackend,
-  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/joblib/_parallel_backends.py", line 16, in <module>
-    from .pool import MemmappingPool
-  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/joblib/pool.py", line 31, in <module>
-    from ._memmapping_reducer import get_memmapping_reducers
-  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/joblib/_memmapping_reducer.py", line 37, in <module>
-    from .externals.loky.backend import resource_tracker
-  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/joblib/externals/loky/__init__.py", line 6, in <module>
-    from concurrent.futures import (
-  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 936, in exec_module
-  File "<frozen importlib._bootstrap_external>", line 1032, in get_code
-  File "<frozen importlib._bootstrap_external>", line 1131, in get_data
-KeyboardInterrupt
-ap_external>", line 570, in _get_cached
-  File "<frozen importlib._bootstrap_external>", line 474, in cache_from_source
-KeyboardInterrupt
-/scipy/stats/_distn_infrastructure.py", line 735, in _construct_argparser
-    shapes_args = _getfullargspec(meth)  # NB does not contain self
-                  ^^^^^^^^^^^^^^^^^^^^^
-  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/scipy/_lib/_util.py", line 333, in getfullargspec_no_self
-    defaults = tuple(
-               ^^^^^^
-  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/scipy/_lib/_util.py", line 336, in <genexpr>
-    p.default is not p.empty)
-    ^^^^^^^^^^^^^^^^^^^^^^^^
-KeyboardInterrupt
+  File "/Users/kaihuang1122/Documents/ML/Final/MLP GPT/given_err.py", line 20, in <module>
+    with open(f"/Users/kaihuang1122/Documents/ML/Final/Combination/{sys.argv[2]}/{sys.argv[1]}.csv", "r") as fin:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/kaihuang1122/Documents/ML/Final/Combination/hours/1202-1209/hours/1002-1202.csv'

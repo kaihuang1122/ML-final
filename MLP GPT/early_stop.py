@@ -20,8 +20,8 @@ def earlystop(x):
     prev_error = 999
     units = 6
     for epoch in range(10):
-        itr = (x, "hours/1002-1202", "hours/1202-1209", str(epoch), str(units), f"predict{units}")
-        exe(itr)
+        #itr = (x, "hours/1002-1202", "hours/1202-1209", str(epoch), str(units), f"predict{units}")
+        exe(x, "hours/1002-1202", "hours/1202-1209", str(epoch), str(units), f"predict{units}")
         fh = open(f"/Users/kaihuang1122/Documents/ML/Final/MLP GPT/log/predict{units}/{x[:-1]}.out")
         error = fh.readlines()[-1].split(' ')[-1][:-1]
         if (error < prev_error):
@@ -29,6 +29,13 @@ def earlystop(x):
             prev_error = error
         else:
             break
+    exe(x, "hours/1002-1202", "hours/1202-1209", str(epoch), str(7), f"predict{units}")
+    fh = open(f"/Users/kaihuang1122/Documents/ML/Final/MLP GPT/log/predict{units}/{x[:-1]}.out")
+    error = fh.readlines()[-1].split(' ')[-1][:-1]
+    if (error < prev_error):
+        units = 7
+    fh = open(f"/Users/kaihuang1122/Documents/ML/Final/MLP GPT/log/predict{units}/{x[:-1]}_paramiter.out")
+    fh.write(f"{epoch},{units}")
 
 
 
@@ -43,7 +50,8 @@ if __name__ == '__main__':
     upd = lambda *args: pbar.update()    
     with Pool(10) as p:
         for x in open("/Users/kaihuang1122/Documents/ML/Final/html.2023.final.data/sno_test_set.txt").readlines()[0:]:
-            p.apply_async(earlystop, x, callback=upd)
+            p.map_async(earlystop, x, callback=upd)
+            #p.apply_async(earlystop, x, callback=upd)
         p.close()
         p.join()
 
